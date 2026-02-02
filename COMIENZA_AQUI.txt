@@ -1,0 +1,335 @@
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    SOLICITUD DE VISA AMERICANA PARA COLOMBIANOS              │
+│                              🇨🇴 → 🇺🇸 Visa DS-160                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+📦 CONTENIDO DE TU PAQUETE COMPLETO:
+
+1. INICIO.html ⭐ COMIENZA AQUÍ
+   └─ Panel principal con acceso a todos los recursos
+   └─ Tamaño: 22 KB
+   └─ Abre en: Chrome, Firefox, Edge
+
+2. Formulario_Visa_Americana_DS160.html ⭐ RECOMENDADO
+   └─ Formulario interactivo con autoguardado
+   └─ 7 secciones organizadas
+   └─ Se guarda automáticamente cada 30 segundos
+   └─ Tamaño: 46 KB
+   └─ Tiempo: 1-2 horas para completar
+
+3. Formulario_Visa_DS160_Guia.csv
+   └─ Archivo para Excel o Google Sheets
+   └─ Importable a cualquier programa de hojas de cálculo
+   └─ Tamaño: 8 KB
+   └─ Mejor para: Acceso desde múltiples dispositivos
+
+4. README.md
+   └─ Guía completa paso a paso
+   └─ Lista de documentos requeridos
+   └─ Información detallada sobre el proceso
+   └─ Preguntas frecuentes en la entrevista
+
+5. GUIA_GoogleSheets.md
+   └─ Tutorial para usar Google Sheets
+   └─ Cómo compartir con familia
+   └─ Cómo crear validaciones y formatos
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🚀 GUÍA RÁPIDA - PASOS EN ORDEN:
+
+┌─ PASO 1: COMIENZA (AHORA - 30 minutos)
+│  ✓ Abre INICIO.html en tu navegador
+│  ✓ Lee todas las opciones
+│  ✓ Elige tu herramienta preferida
+
+┌─ PASO 2: PREPARA TU INFORMACIÓN (30-60 minutos)
+│  ✓ Reúne: Pasaporte, Cédula, Cartas de empleador
+│  ✓ Busca: Extractos bancarios, Comprobantes de vivienda
+│  ✓ Anota: Información de familia
+
+┌─ PASO 3: COMPLETA EL FORMULARIO (1-2 horas)
+│  ✓ Abre: Formulario_Visa_Americana_DS160.html
+│  ✓ Completa: Todas las 7 secciones
+│  ✓ Guarda: El formulario se guarda automáticamente
+
+┌─ PASO 4: LLENA EL DS-160 OFICIAL (2-3 horas) ⚠️ OBLIGATORIO
+│  ✓ Ve a: https://ceac.state.gov/GenNIV/
+│  ✓ Completa: El formulario oficial
+│  ✓ Guarda: Tu Application ID
+
+┌─ PASO 5: PAGA LA TARIFA (30 minutos)
+│  ✓ Monto: $160 USD
+│  ✓ Dónde: En el sitio de CEAC
+│  ✓ Guarda: Tu comprobante de pago
+
+┌─ PASO 6: PROGRAMA TU CITA (15 minutos)
+│  ✓ Ve a: https://ais.usvisa-info.com/es-co/
+│  ✓ Elige: Fecha y hora disponible
+│  ✓ Confirma: Tu cita
+
+┌─ PASO 7: RECOPILA DOCUMENTOS (1-2 semanas)
+│  ✓ Lee: Sección de documentos requeridos en README.md
+│  ✓ Junta: Todos los originales
+│  ✓ Verifica: Que nada falte
+
+┌─ PASO 8: PREPÁRATE PARA LA ENTREVISTA (1 semana antes)
+│  ✓ Lee: Preguntas frecuentes en README.md
+│  ✓ Practica: Tus respuestas
+│  ✓ Duerme: Bien la noche anterior
+
+┌─ PASO 9: ASISTE A TU CITA (día de la entrevista)
+│  ✓ Llega: 30 minutos antes
+│  ✓ Sé: Honesto y profesional
+│  ✓ Espera: La decisión (1-2 días hábiles)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚙️ CÓMO USAR CADA HERRAMIENTA:
+
+┌─ OPCIÓN 1: FORMULARIO HTML (RECOMENDADO)
+│  1. Haz doble clic en: Formulario_Visa_Americana_DS160.html
+│  2. Se abrirá en tu navegador
+│  3. Completa las 7 secciones
+│  4. Guarda haciendo clic en "Guardar Borrador"
+│  5. Descarga al finalizar
+│  ✓ VENTAJAS: Más fácil, bonita interfaz, muy intuitiva
+
+┌─ OPCIÓN 2: ARCHIVO CSV EN EXCEL
+│  1. Abre: Formulario_Visa_DS160_Guia.csv
+│  2. Si te pide, selecciona: Delimitado por comas (,)
+│  3. Completa los campos en blanco
+│  4. Guarda tu archivo (Ctrl+S)
+│  ✓ VENTAJAS: Acceso desde Excel, Sheets, números, etc.
+
+┌─ OPCIÓN 3: GOOGLE SHEETS (PARA ACCESO REMOTO)
+│  1. Lee: GUIA_GoogleSheets.md
+│  2. Ve a: https://drive.google.com
+│  3. Sube el archivo CSV
+│  4. Abre con Google Sheets
+│  5. Completa los datos
+│  ✓ VENTAJAS: Acceso desde cualquier dispositivo
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 DOCUMENTOS QUE NECESITAS:
+
+IDENTIDAD (Lleva ORIGINALES):
+  □ Pasaporte (válido 6+ meses)
+  □ Cédula de ciudadanía
+  □ Foto 5x5 cm (fondo blanco)
+
+DINERO (Comprobantes):
+  □ Extractos bancarios (3 meses)
+  □ Carta de tu empleador
+  □ Nóminas o comprobantes de ingresos
+
+CASA (Prueba de residencia):
+  □ Factura de servicios (agua, luz, gas)
+  □ O contrato de arrendamiento
+  □ O escritura de propiedad
+
+TRÁMITES (De la solicitud):
+  □ Confirmación de pago ($160 USD)
+  □ Confirmación de cita (embajada)
+  □ Pasaporte con sello de entrada anterior (si aplica)
+
+VIAJE (Depende tu propósito):
+  □ Reserva de hotel (turismo)
+  □ Carta de invitación (negocios)
+  □ Carta de aceptación (estudiante)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚠️ REGLAS DE ORO:
+
+✓ SÉ HONESTO EN TODO
+  → Mentir es FRAUDE FEDERAL con consecuencias graves
+  → Mejor ser rechazado por honesto que deportado por fraude
+
+✓ LLEGA TEMPRANO
+  → Mínimo 30 minutos antes de tu cita
+  → Retrasos pueden resultar en cancelación
+
+✓ LLEVA ORIGINALES
+  → NO fotocopias de documentos importantes
+  → Ten 2-3 copias de documentos secundarios
+
+✓ DEMUESTRA VÍNCULOS CON COLOMBIA
+  → Familia que no va contigo
+  → Propiedad o negocio
+  → Empleador que espera tu regreso
+
+✓ RESPONDE CON SEGURIDAD
+  → Brevemente (una oración, máximo dos)
+  → Sin inventar o exagerar
+  → Si no sabes, dilo con honestidad
+
+✗ NO HAGAS:
+  → Mentir o inventar historias
+  → Llevar documentos no auténticos
+  → Confesar antecedentes al oficial (a menos que pregunte)
+  → Parecer que no vas a regresar a Colombia
+  → Responder con inseguridad o dudas
+
+═══════════════════════════════════════════════════════════════════════════════
+
+💬 PREGUNTAS TÍPICAS EN LA ENTREVISTA:
+
+"¿Cuál es el propósito de tu viaje?"
+→ Responde específicamente (turismo, negocios, etc.)
+→ Dale detalles concretos
+
+"¿Cuánto tiempo vas a permanecer?"
+→ Sé claro y realista (ej: "2 semanas")
+→ No digas "Indefinido" o "No sé"
+
+"¿Quién paga el viaje?"
+→ Sé honesto (tú mismo, empleador, familia, etc.)
+→ Ten documentos de comprobación
+
+"¿Tienes familia en EE.UU.?"
+→ Di la verdad (sí/no y cuántos)
+→ Si es sí, explica por qué regresas a Colombia
+
+"¿Cuándo viajaste a EE.UU. antes?"
+→ Sé específico con fechas si aplica
+→ Si nunca, di claramente "Nunca"
+
+"¿Dónde trabajas?"
+→ Nombre completo de la empresa
+→ Tu cargo específico
+→ Cuánto tiempo llevas allí
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔗 ENLACES IMPORTANTES:
+
+FORMULARIO OFICIAL:
+https://ceac.state.gov/GenNIV/General/complete/complete_personal.aspx
+
+PROGRAMAR CITA:
+https://ais.usvisa-info.com/es-co/
+
+EMBAJADA COLOMBIA:
+https://co.usembassy.gov/
+
+INFORMACIÓN GENERAL:
+https://travel.state.gov/
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❓ PREGUNTAS FRECUENTES:
+
+P: ¿Puedo usar este formulario en lugar del DS-160 oficial?
+R: NO. Este es SOLO una herramienta de ayuda. DEBES llenar el DS-160 oficial
+   en ceac.state.gov. Es obligatorio.
+
+P: ¿Mi información se envía a internet?
+R: NO. Todo se guarda localmente en tu dispositivo. Cero datos en servidores.
+
+P: ¿Cuánto cuesta la visa?
+R: $160 USD (puede variar según tipo de visa). Este pago es aparte.
+
+P: ¿Cuánto tiempo tarda?
+R: Generalmente 1-2 meses desde que pagas hasta tu entrevista.
+
+P: ¿Puedo llevar a alguien a la entrevista?
+R: NO. Solo tú puedes entrar. Pero puedes traer a alguien en la sala de espera.
+
+P: ¿Qué pasa si me rechazan?
+R: Puedes solicitar nuevamente (generalmente después de 6 meses).
+
+P: ¿Cuánto tiempo es válida la visa?
+R: Típicamente 10 años para B1/B2 (puede variar).
+
+P: ¿Cuánto tiempo puedo permanecer en EE.UU.?
+R: El oficial decide en el puerto de entrada (máximo 6 meses para turismo).
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 ESTADÍSTICAS:
+
+Tasa de aprobación: 75-85% (varía según caso)
+Tiempo procesamiento: 1-2 meses
+Validez de visa: 10 años (típicamente)
+Permanencia máxima: 6 meses (turismo)
+Costo: $160 USD
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ CHECKLIST FINAL - DÍA DE LA ENTREVISTA:
+
+DOCUMENTOS:
+□ Pasaporte original
+□ Cédula original
+□ Foto 5x5 cm
+□ Confirmación de pago DS-160
+□ Confirmación de cita (impresa)
+□ Extractos bancarios
+□ Carta de empleador
+□ Comprobante de vivienda
+□ Otros documentos relevantes
+
+INFORMACIÓN:
+□ He memorizado mi Application ID
+□ He revisado todas mis respuestas
+□ Puedo explicar mi propósito de viaje
+□ Tengo justificación económica
+□ Puedo demostrar vínculos con Colombia
+
+PERSONAL:
+□ Tengo ropa profesional limpia
+□ He dormido bien (8+ horas)
+□ No he consumido alcohol ni drogas
+□ Tengo dinero en efectivo
+□ Mis documentos están en orden
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚖️ AVISOS LEGALES:
+
+Este formulario:
+✓ Es una herramienta INFORMATIVA solamente
+✗ NO es el formulario oficial (ese está en ceac.state.gov)
+✓ NO envía datos a servidores externos
+✗ NO garantiza aprobación de visa
+✓ Todos los datos se guardan LOCALMENTE
+
+La visa:
+✓ Puede ser RECHAZADA por cualquier motivo
+✗ NO hay garantía de aprobación
+✓ El oficial tiene PODER DISCRECIONAL TOTAL
+✗ Las apelaciones son MUY limitadas
+
+Fraude:
+✗ Proporcionar información falsa es FRAUDE FEDERAL
+✗ Consecuencias: Deportación, antecedentes penales, prohibición permanente
+✓ Mejor ser honesto y rechazado que fraudulento y deportado
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 RESUMEN EN 1 MINUTO:
+
+1. Abre INICIO.html
+2. Usa Formulario_Visa_Americana_DS160.html
+3. Completa todas las secciones
+4. Llena el DS-160 oficial en ceac.state.gov
+5. Paga $160 USD
+6. Programa tu cita
+7. Recopila documentos
+8. Asiste a tu entrevista
+9. ¡Sé honesto en todo!
+
+═══════════════════════════════════════════════════════════════════════════════
+
+¡Mucho éxito en tu solicitud de visa! 🇺🇸
+
+Recuerda: Sé honesto, completo, puntual y profesional.
+Si cumples, aumentarás significativamente tu probabilidad de aprobación.
+
+Creado: Febrero 2026
+Para: Ciudadanos Colombianos
+Versión: 1.0
+
+═══════════════════════════════════════════════════════════════════════════════

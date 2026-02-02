@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de Solicitud de Visa - Colombia a EE.UU.</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-header {
+            padding: 20px;
+            font-size: 1.4em;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .card-header.primary {
+            background: linear-gradient(135deg, #0052CC 0%, #003d99 100%);
+        }
+        
+        .card-header.success {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+        }
+        
+        .card-header.warning {
+            background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%);
+            color: #333;
+        }
+        
+        .card-header.info {
+            background: linear-gradient(135deg, #17a2b8 0%, #0c5460 100%);
+        }
+        
+        .card-body {
+            padding: 20px;
+        }
+        
+        .card-body p {
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .card-body ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .card-body li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+        }
+        
+        .card-body li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .card-footer {
+            padding: 15px 20px;
+            background: #f9f9f9;
+            border-top: 1px solid #eee;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: #0052CC;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #0041a3;
+        }
+        
+        .btn-success {
+            background: #28a745;
+            color: white;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+        .step-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .step-section h2 {
+            color: #0052CC;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #0052CC;
+            padding-bottom: 10px;
+        }
+        
+        .steps-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .step-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #0052CC;
+            border-radius: 5px;
+        }
+        
+        .step-item h3 {
+            color: #0052CC;
+            margin-bottom: 10px;
+        }
+        
+        .step-item p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            background: #0052CC;
+            color: white;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .badge.recommended {
+            background: #28a745;
+        }
+        
+        .badge.new {
+            background: #ffc107;
+            color: #333;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            padding: 20px;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .icon {
+            font-size: 2em;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Centro de Solicitud de Visa Americana</h1>
+            <p>Para Ciudadanos Colombianos | Paso a Paso Completo</p>
+        </header>
+        
+        <!-- HERRAMIENTAS PRINCIPALES -->
+        <div class="grid">
+            <div class="card">
+                <div class="card-header primary">
+                    <span class="icon">📝</span> Formulario Interactivo
+                </div>
+                <div class="card-body">
+                    <p><strong>La mejor opción para comenzar</strong></p>
+                    <ul>
+                        <li>Interfaz moderna y fácil</li>
+                        <li>Guardado automático</li>
+                        <li>7 secciones organizadas</li>
+                        <li>Sin conexión a internet requerida</li>
+                        <li>Acceso desde cualquier navegador</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-block" onclick="openFile('Formulario_Visa_Americana_DS160.html')">
+                        Abrir Formulario
+                    </button>
+                    <small style="color: #999;">⏱ Tiempo: 1-2 horas</small>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header success">
+                    <span class="icon">📊</span> Archivo Excel/CSV
+                </div>
+                <div class="card-body">
+                    <p><strong>Para usar en Excel o Google Sheets</strong></p>
+                    <ul>
+                        <li>Compatible con múltiples programas</li>
+                        <li>Acceso desde dispositivos móviles</li>
+                        <li>Compartible con familia</li>
+                        <li>Sincronización en nube</li>
+                        <li>Fácil de imprimir</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-block" onclick="openFile('Formulario_Visa_DS160_Guia.csv')">
+                        Descargar CSV
+                    </button>
+                    <small style="color: #999;">📱 Accesible desde cualquier lado</small>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-header info">
+                    <span class="icon">📚</span> Guías Completas
+                </div>
+                <div class="card-body">
+                    <p><strong>Toda la información que necesitas</strong></p>
+                    <ul>
+                        <li>Guía paso a paso</li>
+                        <li>Lista de documentos</li>
+                        <li>Preguntas frecuentes</li>
+                        <li>Contactos útiles</li>
+                        <li>Avisos legales</li>
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary btn-block" onclick="openFile('README.md')">
+                        Leer Guía Principal
+                    </button>
+                    <button class="btn btn-primary btn-block" onclick="openFile('GUIA_GoogleSheets.md')">
+                        Guía Google Sheets
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PROCESO PASO A PASO -->
+        <div class="step-section">
+            <h2>🚀 Tu Proceso Completo (7 Pasos)</h2>
+            <div class="steps-list">
+                <div class="step-item">
+                    <h3>Paso 1: Prepara Información</h3>
+                    <p>Recopila tu pasaporte, cédula, información laboral y familiar.</p>
+                    <small style="color: #999;">⏱ 30-60 minutos</small>
+                </div>
+                
+                <div class="step-item">
+                    <h3>Paso 2: Completa Este Formulario</h3>
+                    <p>Usa nuestro formulario como guía para organizar tus datos.</p>
+                    <small style="color: #999;">⏱ 1-2 horas</small>
+                </div>
+                
+                <div class="step-item">
+                    <h3>Paso 3: DS-160 Oficial</h3>
+                    <p>Llena el formulario oficial en ceac.state.gov. OBLIGATORIO.</p>
+                    <small style="color: #999;">⏱ 2-3 horas</small>
+                </div>
+                
+                <div class="step-item">
+                    <h3>Paso 4: Paga Tarifa ($160)</h3>
+                    <p>Paga $160 USD en el sistema de pagos en línea.</p>
+                    <small style="color: #999;">⏱ 30 minutos</small>
+                </div>
+                
+                <div class="step-item">
+                    <h3>Paso 5: Programa Cita</h3>
+                    <p>Solicita cita en la embajada. Disponibilidad varía.</p>
+                    <small style="color: #999;">⏱ 15 minutos</small>
+                </div>
+                
+                <div class="step-item">
+                    <h3>Paso 6: Recopila Documentos</h3>
+                    <p>Reúne todos los documentos originales requeridos.</p>
+                    <small style="color: #999;">⏱ 1-2 semanas</small>
+                </div>
+                
+                <div class="step-item">
+                    <h3>Paso 7: Entrevista</h3>
+                    <p>Asiste a tu cita con todos tus documentos. ¡Sé honesto!</p>
+                    <small style="color: #999;">⏱ 5-10 minutos</small>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DOCUMENTOS REQUERIDOS -->
+        <div class="step-section">
+            <h2>📋 Documentos Esenciales</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div>
+                    <h3 style="color: #0052CC; margin-bottom: 10px;">Identificación</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 8px 0;"><strong>✓ Pasaporte</strong> (válido 6+ meses)</li>
+                        <li style="padding: 8px 0;"><strong>✓ Cédula</strong> (original)</li>
+                        <li style="padding: 8px 0;"><strong>✓ Foto</strong> (5x5 cm, fondo blanco)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #0052CC; margin-bottom: 10px;">Económicos</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 8px 0;"><strong>✓ Extractos</strong> (3 últimos meses)</li>
+                        <li style="padding: 8px 0;"><strong>✓ Carta laboral</strong> (salario)</li>
+                        <li style="padding: 8px 0;"><strong>✓ Comprobante</strong> (vivienda)</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 style="color: #0052CC; margin-bottom: 10px;">Solicitud</h3>
+                    <ul style="list-style: none;">
+                        <li style="padding: 8px 0;"><strong>✓ Confirmación</strong> (pago DS-160)</li>
+                        <li style="padding: 8px 0;"><strong>✓ Cita</strong> (embajada)</li>
+                        <li style="padding: 8px 0;"><strong>✓ Itinerario</strong> (viaje)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CONTACTOS ÚTILES -->
+        <div class="step-section">
+            <h2>🔗 Contactos y Enlaces Oficiales</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #0052CC;">
+                    <h4 style="color: #0052CC; margin-bottom: 10px;">📝 Solicitud DS-160</h4>
+                    <p>https://ceac.state.gov/GenNIV/</p>
+                    <small style="color: #999;">El formulario oficial que DEBES llenar</small>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #0052CC;">
+                    <h4 style="color: #0052CC; margin-bottom: 10px;">📅 Programar Cita</h4>
+                    <p>https://ais.usvisa-info.com/es-co/</p>
+                    <small style="color: #999;">Reserva tu entrevista en la embajada</small>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #0052CC;">
+                    <h4 style="color: #0052CC; margin-bottom: 10px;">🏛️ Embajada Colombia</h4>
+                    <p>https://co.usembassy.gov/</p>
+                    <small style="color: #999;">Información oficial e importante</small>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #0052CC;">
+                    <h4 style="color: #0052CC; margin-bottom: 10px;">✈️ Información Visas</h4>
+                    <p>https://travel.state.gov/</p>
+                    <small style="color: #999;">Portal oficial de visas de EE.UU.</small>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #0052CC;">
+                    <h4 style="color: #0052CC; margin-bottom: 10px;">📞 Teléfono Embajada</h4>
+                    <p>+57 1 5556 000 (Bogotá)</p>
+                    <small style="color: #999;">Línea de atención al público</small>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; border-left: 4px solid #0052CC;">
+                    <h4 style="color: #0052CC; margin-bottom: 10px;">❓ Preguntas Frecuentes</h4>
+                    <p>https://travel.state.gov/ds-160-faqs.html</p>
+                    <small style="color: #999;">Respuestas a preguntas comunes</small>
+                </div>
+            </div>
+        </div>
+        
+        <!-- AVISOS IMPORTANTES -->
+        <div class="step-section" style="background: #fff3cd; border-left: 5px solid #ffc107;">
+            <h2 style="color: #664d03;">⚠️ Avisos Legales Importantes</h2>
+            <div style="color: #664d03; line-height: 1.8;">
+                <p><strong>HONESTIDAD ES OBLIGATORIO:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Mentir en la solicitud es FRAUDE FEDERAL</li>
+                    <li>Consecuencias incluyen: deportación permanente, antecedentes penales, prohibición de entrada</li>
+                    <li>Es mejor ser rechazado siendo honesto que ser deportado por fraude</li>
+                </ul>
+                
+                <p><strong>ESTE FORMULARIO NO ES OFICIAL:</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Es solo una herramienta de AYUDA</li>
+                    <li>DEBES completar el DS-160 oficial en ceac.state.gov</li>
+                    <li>Los datos no se envían a servidores externos</li>
+                    <li>Todo se guarda localmente en tu dispositivo</li>
+                </ul>
+                
+                <p><strong>GARANTÍAS LIMITADAS:</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>La visa puede ser RECHAZADA por cualquier motivo</li>
+                    <li>No hay garantía de aprobación</li>
+                    <li>El oficial tiene poder discrecional total</li>
+                    <li>Las apelaciones son muy limitadas</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- RECOMENDACIONES FINALES -->
+        <div class="step-section">
+            <h2>✅ Recomendaciones Finales</h2>
+            <div style="background: #d1e7dd; padding: 20px; border-radius: 8px; border-left: 5px solid #28a745;">
+                <h3 style="color: #0f5132; margin-bottom: 15px;">Cosas que SÍ debes hacer:</h3>
+                <ul style="list-style: none;">
+                    <li style="padding: 8px 0;">✓ <strong>Sé honesto</strong> en TODAS tus respuestas</li>
+                    <li style="padding: 8px 0;">✓ <strong>Lleva documentos originales</strong> a la entrevista</li>
+                    <li style="padding: 8px 0;">✓ <strong>Llega temprano</strong> (30 minutos antes)</li>
+                    <li style="padding: 8px 0;">✓ <strong>Viste profesional</strong> y conservador</li>
+                    <li style="padding: 8px 0;">✓ <strong>Demuestra vínculos</strong> con Colombia</li>
+                    <li style="padding: 8px 0;">✓ <strong>Prepárate para preguntas</strong> difíciles</li>
+                    <li style="padding: 8px 0;">✓ <strong>Mantén compostura</strong> en la entrevista</li>
+                </ul>
+            </div>
+            
+            <div style="background: #f8d7da; padding: 20px; border-radius: 8px; border-left: 5px solid #dc3545; margin-top: 20px;">
+                <h3 style="color: #664d03; margin-bottom: 15px;">Cosas que NO debes hacer:</h3>
+                <ul style="list-style: none;">
+                    <li style="padding: 8px 0;">✗ <strong>Mentir o inventar</strong> cualquier información</li>
+                    <li style="padding: 8px 0;">✗ <strong>Llegar tarde</strong> a tu cita</li>
+                    <li style="padding: 8px 0;">✗ <strong>Llevar fotocopias</strong> de documentos importantes</li>
+                    <li style="padding: 8px 0;">✗ <strong>Usar teléfono o cámara</strong> en zona de seguridad</li>
+                    <li style="padding: 8px 0;">✗ <strong>Exagerar tu situación</strong> económica</li>
+                    <li style="padding: 8px 0;">✗ <strong>Responder lo que NO sabes</strong> con seguridad</li>
+                    <li style="padding: 8px 0;">✗ <strong>Viajar solo</strong> con influencias externas</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2026 Centro de Información de Visas Americana para Colombianos</p>
+            <p style="margin-top: 10px; font-size: 0.9em;">Última actualización: Febrero 1, 2026</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">Esta herramienta es informativa. Consulta siempre los sitios oficiales para información actualizada.</p>
+        </footer>
+    </div>
+    
+    <script>
+        function openFile(filename) {
+            // Intenta abrir el archivo localmente
+            const path = filename;
+            
+            // Si es un archivo HTML, abre directamente
+            if (filename.endsWith('.html')) {
+                window.location.href = path;
+            } 
+            // Si es CSV o MD, abre en nueva ventana
+            else {
+                window.open(path, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>

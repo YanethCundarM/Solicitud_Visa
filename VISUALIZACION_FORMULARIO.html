@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Secciones del Formulario DS-160</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            padding: 30px;
+        }
+        
+        h1 {
+            color: #0052cc;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            border-left: 5px solid #667eea;
+            padding-left: 20px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .section-title {
+            color: #0052cc;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .data-tab {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #0052cc;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-family: monospace;
+            margin-bottom: 10px;
+        }
+        
+        .subsection {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #764ba2;
+        }
+        
+        .subsection-title {
+            font-weight: bold;
+            color: #764ba2;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .field {
+            margin: 8px 0;
+            padding: 10px;
+            background: #ffffff;
+            border-left: 3px solid #ddd;
+            display: flex;
+            gap: 10px;
+        }
+        
+        .field-icon {
+            font-size: 18px;
+            min-width: 25px;
+        }
+        
+        .field-label {
+            flex: 1;
+        }
+        
+        .field-type {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            color: #666;
+            margin-top: 3px;
+        }
+        
+        .required {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+        
+        .optional {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .conditional {
+            background: #fff3e0;
+            border-left-color: #ff9800;
+            opacity: 0.9;
+        }
+        
+        .dynamic {
+            background: #e8f5e9;
+            border-left-color: #4caf50;
+        }
+        
+        .legend {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .legend-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #0052cc;
+            margin-bottom: 15px;
+        }
+        
+        .legend-item {
+            margin: 8px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .legend-icon {
+            font-size: 20px;
+            min-width: 30px;
+        }
+        
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .summary-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .summary-card-title {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+        
+        .summary-card-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .toc {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        
+        .toc-title {
+            font-weight: bold;
+            color: #0052cc;
+            margin-bottom: 10px;
+        }
+        
+        .toc-list {
+            list-style: none;
+            columns: 2;
+            gap: 20px;
+        }
+        
+        .toc-list li {
+            margin: 5px 0;
+            padding-left: 20px;
+        }
+        
+        .toc-list li:before {
+            content: "▸ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-left: -15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 ESTRUCTURA VISUAL DEL FORMULARIO DS-160</h1>
+        
+        <div class="summary">
+            <div class="summary-card">
+                <div class="summary-card-title">Total Secciones</div>
+                <div class="summary-card-value">10</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card-title">Campos Requeridos</div>
+                <div class="summary-card-value">80+</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card-title">Campos Opcionales</div>
+                <div class="summary-card-value">50+</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-card-title">Dinámicos</div>
+                <div class="summary-card-value">4</div>
+            </div>
+        </div>
+        
+        <div class="toc">
+            <div class="toc-title">📑 Tabla de Contenido</div>
+            <ul class="toc-list">
+                <li>Sección 1: Información Personal</li>
+                <li>Sección 2: Información del Viaje</li>
+                <li>Sección 3: Antecedentes y Viajes</li>
+                <li>Sección 4: Dirección y Teléfono</li>
+                <li>Sección 5: Información de Pasaporte</li>
+                <li>Sección 6: Contacto en EE.UU. ⭐</li>
+                <li>Sección 7: Documentos</li>
+                <li>Sección 8: Otro</li>
+                <li>Sección 9: Recursos</li>
+                <li>Sección 10: Información Familiar</li>
+            </ul>
+        </div>
+        
+        <!-- SECCIÓN 1 -->
+        <div class="section">
+            <div class="section-title">🧑‍💼 SECCIÓN 1: INFORMACIÓN PERSONAL BÁSICA</div>
+            <div class="data-tab">data-tab="personal"</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Información Personal - Parte 1</div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Tu Nombre Completo <span class="required">*</span>
+                        <div class="field-type">Texto - Requerido</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">⭕</div>
+                    <div class="field-label">
+                        ¿Has usado otro nombre? <span class="required">*</span>
+                        <div class="field-type">Radio (Sí/No)</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Nombre usado fuera del que usas actualmente
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">⭕</div>
+                    <div class="field-label">
+                        Sexo <span class="required">*</span>
+                        <div class="field-type">Radio (Masculino/Femenino/Otro)</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">⭕</div>
+                    <div class="field-label">
+                        Estado Civil <span class="required">*</span>
+                        <div class="field-type">Radio (5 opciones)</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">📅</div>
+                    <div class="field-label">
+                        Fecha de Nacimiento <span class="required">*</span>
+                        <div class="field-type">Date</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">📊</div>
+                    <div class="field-label">
+                        Visualización de Fecha
+                        <div class="field-type">Display (Read-only)</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Ciudad de Nacimiento <span class="required">*</span>
+                        <div class="field-type">Texto</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Departamento <span class="required">*</span>
+                        <div class="field-type">Texto</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Información Personal - Parte 2</div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        País / Región de Origen <span class="required">*</span>
+                        <div class="field-type">Read-only: Colombia</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">⭕</div>
+                    <div class="field-label">
+                        ¿Tiene o ha tenido alguna nacionalidad distinta? <span class="required">*</span>
+                        <div class="field-type">Radio (Sí/No)</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">⭕</div>
+                    <div class="field-label">
+                        ¿Es residente permanente de otro país? <span class="required">*</span>
+                        <div class="field-type">Radio (Sí/No)</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">📋</div>
+                    <div class="field-label">
+                        ¿Con qué documento se identifica? <span class="required">*</span>
+                        <div class="field-type">Dropdown (RC/TI/CC/Otro)</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Número de Identificación Nacional <span class="required">*</span>
+                        <div class="field-type">Texto</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Número de Seguro Social EE.UU. <span class="optional">(opcional)</span>
+                        <div class="field-type">Texto</div>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Número de ITIN <span class="optional">(opcional)</span>
+                        <div class="field-type">Texto</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 6 - DESTACADA -->
+        <div class="section" style="border-left-color: #ff9800; background: #fff8e1;">
+            <div class="section-title" style="color: #ff6f00;">
+                ⭐ SECCIÓN 6 (NUEVA): CONTACTO EN EE.UU.
+            </div>
+            <div class="data-tab">data-tab="familia"</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Persona o Organización de Contacto en EE.UU.</div>
+                <div class="field">
+                    <div class="field-icon">⭕</div>
+                    <div class="field-label">
+                        ¿Tienes un contacto en EE.UU.? <span class="required">*</span>
+                        <div class="field-type">Radio (Sí/No)</div>
+                    </div>
+                </div>
+                
+                <hr style="margin: 15px 0; border: none; border-top: 2px dashed #ff9800;">
+                <p style="color: #ff6f00; font-weight: bold; margin-bottom: 10px;">↓ Si responde SÍ, se muestran:</p>
+                
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Apellidos <span class="required">*</span>
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Nombres <span class="required">*</span>
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Nombre de la Organización <span class="optional">(opcional)</span>
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">📋</div>
+                    <div class="field-label">
+                        Relación contigo <span class="required">*</span>
+                        <div class="field-type">Dropdown (14 opciones) - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Dirección de Calle (Línea 1) <span class="required">*</span>
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Dirección de Calle (Línea 2) <span class="optional">(opcional)</span>
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Ciudad <span class="required">*</span>
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">📋</div>
+                    <div class="field-label">
+                        Estado <span class="required">*</span>
+                        <div class="field-type">Dropdown (50 estados + DC) - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">
+                        Código Postal (ZIP) <span class="optional">(opcional)</span>
+                        <div class="field-type">Texto - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">📱</div>
+                    <div class="field-label">
+                        Teléfono <span class="required">*</span>
+                        <div class="field-type">Teléfono - Condicional</div>
+                    </div>
+                </div>
+                <div class="field conditional">
+                    <div class="field-icon">📧</div>
+                    <div class="field-label">
+                        Correo Electrónico <span class="required">*</span>
+                        <div class="field-type">Email - Condicional</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECCIÓN 10 -->
+        <div class="section" style="border-left-color: #4caf50; background: #f1f8e9;">
+            <div class="section-title" style="color: #2e7d32;">
+                👨‍👩‍👧 SECCIÓN 10: INFORMACIÓN FAMILIAR (MOVIDA)
+            </div>
+            <div class="data-tab">data-tab="familiar"</div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Padre</div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">Nombre Completo del Padre</div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">📅</div>
+                    <div class="field-label">Fecha de Nacimiento del Padre</div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">📋</div>
+                    <div class="field-label">¿Aún vive?</div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Madre</div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">Nombre Completo de la Madre</div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">📅</div>
+                    <div class="field-label">Fecha de Nacimiento de la Madre</div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">📋</div>
+                    <div class="field-label">¿Aún vive?</div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Hermanos/as</div>
+                <div class="field">
+                    <div class="field-icon">📝</div>
+                    <div class="field-label">¿Tienes hermanos? ¿Alguno vive en EE.UU.?</div>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <div class="subsection-title">Estado Civil</div>
+                <div class="field">
+                    <div class="field-icon">📋</div>
+                    <div class="field-label">Estado Civil <span class="required">*</span></div>
+                </div>
+                <div class="field">
+                    <div class="field-icon">✏️</div>
+                    <div class="field-label">¿Tienes Hijos?</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- LEYENDA -->
+        <div class="legend">
+            <div class="legend-title">📌 LEYENDA DE SÍMBOLOS Y TIPOS DE CAMPOS</div>
+            
+            <div class="legend-item">
+                <div class="legend-icon">✏️</div>
+                <div><strong>Campo de Texto</strong> - Entrada de texto simple</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon">📅</div>
+                <div><strong>Campo de Fecha</strong> - Selección de date (YYYY-MM-DD)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon">📋</div>
+                <div><strong>Dropdown / Select</strong> - Selección única de opciones predefinidas</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon">⭕</div>
+                <div><strong>Radio Button</strong> - Opción única (Sí/No o múltiples opciones)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon">☑️</div>
+                <div><strong>Checkbox</strong> - Múltiples opciones (puede seleccionar varias)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon">📝</div>
+                <div><strong>Textarea</strong> - Texto largo / párrafo</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon">📧</div>
+                <div><strong>Email</strong> - Campo de correo electrónico (validación de email)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon">📱</div>
+                <div><strong>Teléfono</strong> - Campo de teléfono (formato internacional)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon"><span class="required">*</span></div>
+                <div><strong>Requerido</strong> - Campo obligatorio (debe completarse)</div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-icon"><span class="optional">(opcional)</span></div>
+                <div><strong>Opcional</strong> - Campo no obligatorio</div>
+            </div>
+            <div class="legend-item" style="background: #fff3e0; padding: 10px; border-radius: 3px; border-left: 3px solid #ff9800;">
+                <div class="legend-icon">⚙️</div>
+                <div><strong>Condicional</strong> - Se muestra solo si cumple cierta condición (ej: si dice "Sí")</div>
+            </div>
+            <div class="legend-item" style="background: #e8f5e9; padding: 10px; border-radius: 3px; border-left: 3px solid #4caf50;">
+                <div class="legend-icon">➕</div>
+                <div><strong>Dinámico</strong> - Se puede agregar múltiples filas con el botón "+ Agregar"</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

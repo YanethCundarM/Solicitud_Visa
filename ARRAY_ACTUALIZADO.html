@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Actualizado - Formulario DS-160</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #2d2d44 0%, #1a1a2e 100%);
+            font-family: 'Courier New', monospace;
+            padding: 40px 20px;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1e1e2e;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            border: 2px solid #667eea;
+        }
+        
+        h1 {
+            color: #667eea;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .code-block {
+            background: #0f0f1e;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+        
+        .array-start {
+            color: #a8dadc;
+            font-weight: bold;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        
+        .index-item {
+            display: flex;
+            margin: 12px 0;
+            padding: 12px;
+            background: #1a1a2e;
+            border-radius: 5px;
+            border-left: 3px solid #764ba2;
+            transition: all 0.3s ease;
+        }
+        
+        .index-item:hover {
+            background: #252541;
+            border-left-color: #667eea;
+            transform: translateX(5px);
+        }
+        
+        .index-number {
+            color: #ff6b6b;
+            font-weight: bold;
+            min-width: 80px;
+            display: inline-block;
+        }
+        
+        .id-value {
+            color: #51cf66;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        .label-value {
+            color: #ffd93d;
+        }
+        
+        .closing-bracket {
+            color: #a8dadc;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #667eea;
+        }
+        
+        .stat-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            opacity: 0.8;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .note {
+            background: #2d4a2b;
+            border-left: 4px solid #51cf66;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            color: #a8dadc;
+            font-size: 14px;
+        }
+        
+        .updated {
+            background: #4a3a2d;
+            color: #ffd93d;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📊 Array Actualizado - Formulario DS-160</h1>
+        
+        <div class="code-block">
+            <div class="array-start">const TABS = [</div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 0:</span>
+                <span class="id-value">{ id: 'personal',</span>
+                <span class="label-value">label: 'Información Personal' }</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 1:</span>
+                <span class="id-value">{ id: 'info_viaje',</span>
+                <span class="label-value">label: 'Información del viaje' }</span>
+                <span class="updated">ACTUALIZADO</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 2:</span>
+                <span class="id-value">{ id: 'viajes_antes_eeuu',</span>
+                <span class="label-value">label: 'Antecedentes y Viajes Previos' }</span>
+                <span class="updated">ACTUALIZADO</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 3:</span>
+                <span class="id-value">{ id: 'mi_dir_tel',</span>
+                <span class="label-value">label: 'Dirección y Teléfono' }</span>
+                <span class="updated">ACTUALIZADO</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 4:</span>
+                <span class="id-value">{ id: 'pasaporte',</span>
+                <span class="label-value">label: 'Pasaporte' }</span>
+                <span class="updated">ACTUALIZADO</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 5:</span>
+                <span class="id-value">{ id: 'contacto_eeuu',</span>
+                <span class="label-value">label: 'Contacto en EE.UU.' }</span>
+                <span class="updated">ACTUALIZADO</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 6:</span>
+                <span class="id-value">{ id: 'otro',</span>
+                <span class="label-value">label: 'Otro' }</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 7:</span>
+                <span class="id-value">{ id: 'recursos',</span>
+                <span class="label-value">label: 'Recursos' }</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 8:</span>
+                <span class="id-value">{ id: 'familiar',</span>
+                <span class="label-value">label: 'Información Familiar' }</span>
+            </div>
+            
+            <div class="index-item">
+                <span class="index-number">Índice 9:</span>
+                <span class="id-value">{ id: 'documentos',</span>
+                <span class="label-value">label: 'Documentos y Declaraciones' }</span>
+            </div>
+            
+            <div class="closing-bracket">];</div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Total Secciones</div>
+                <div class="stat-value">10</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">IDs Personalizados</div>
+                <div class="stat-value">5</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Estado</div>
+                <div class="stat-value">✓ Activo</div>
+            </div>
+        </div>
+        
+        <div class="note">
+            ✨ <strong>CAMBIOS REALIZADOS:</strong>
+            <ul style="margin-top: 10px; margin-left: 20px;">
+                <li>✓ antecedentes → info_viaje</li>
+                <li>✓ pasaporte → viajes_antes_eeuu</li>
+                <li>✓ viaje → mi_dir_tel</li>
+                <li>✓ laboral → pasaporte</li>
+                <li>✓ familia → contacto_eeuu</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
